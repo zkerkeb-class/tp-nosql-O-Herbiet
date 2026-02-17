@@ -39,6 +39,3 @@ mongoose.connect(process.env.MONGODB_URI)
     .catch((error) => {
         console.error("❌ Erreur de connexion MongoDB :", error);
     });
-
-// Dis à Express de l'utiliser pour les URL qui commencent par /api/auth
-app.use('/api/auth', authRouter);
