@@ -3,7 +3,9 @@ import User from '../schema/user.js'; // On importe le modèle utilisateur
 export const addToTeam = async (req, res) => {
     try {
         const pokemonId = parseInt(req.params.id); // L'ID du Pokémon dans l'URL
-        const userId = req.user.userId; // Le Token nous donne l'ID de l'utilisateur
+        
+        // 👇 LA CORRECTION EST ICI : On utilise exactement ta formule magique !
+        const userId = req.user.userId || req.user.id; 
 
         // 1. On cherche l'utilisateur dans la base de données
         const user = await User.findById(userId);
