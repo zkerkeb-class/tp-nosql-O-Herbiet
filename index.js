@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import favoritesRoutes from './routes/favorites.js';
 import statsRoutes from './routes/stats.js';
+import teamRoutes from './routes/team.js';
 
 // Importation de tes routes
 import pokemonsRoutes from './routes/pokemons.js';
@@ -27,6 +28,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/pokemons', pokemonsRoutes);
 app.use('/api/favorites', favoritesRoutes);
 app.use('/api/stats', statsRoutes);
+app.use('/api/team', teamRoutes);
 
 // --- CONNEXION BASE DE DONNÉES & DÉMARRAGE ---
 // (Remplace ton ancien fichier connect.js pour s'assurer que l'API 
