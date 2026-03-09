@@ -41,4 +41,4 @@ mongoose.connect(process.env.MONGODB_URI)
     });
 
 // Dis à Express de l'utiliser pour les URL qui commencent par /api/auth
-app.use('/api/auth', authRouter);
+app.use('/api/auth', authRoutes);
