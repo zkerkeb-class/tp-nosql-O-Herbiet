@@ -1,4 +1,4 @@
-import Pokemon from '../schema/pokemons.js'; // On importe ton modèle
+import Pokemon from '../schema/pokemon.js'; // On importe ton modèle
 
 export const getStats = async (req, res) => {
     try {
