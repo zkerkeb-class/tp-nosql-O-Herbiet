@@ -3,6 +3,7 @@ import 'dotenv/config';
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import favoritesRoutes from './routes/favorites.js';
 
 // Importation de tes routes
 import pokemonsRoutes from './routes/pokemons.js';
@@ -23,6 +24,7 @@ app.use('/assets', express.static('assets'));
 // --- ROUTES ---
 app.use('/api/auth', authRoutes);
 app.use('/api/pokemons', pokemonsRoutes);
+app.use('/api/favorites', favoritesRoutes);
 
 // --- CONNEXION BASE DE DONNÉES & DÉMARRAGE ---
 // (Remplace ton ancien fichier connect.js pour s'assurer que l'API 
@@ -39,6 +41,3 @@ mongoose.connect(process.env.MONGODB_URI)
     .catch((error) => {
         console.error("❌ Erreur de connexion MongoDB :", error);
     });
-
-// Dis à Express de l'utiliser pour les URL qui commencent par /api/auth
-app.use('/api/auth', authRoutes);
